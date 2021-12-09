@@ -12,34 +12,70 @@ namespace Inlamningsuppgift_c_sharp
         {
             bool isOn = true;
             while (isOn == true)
-
-            Console.WriteLine("Välkommen!");
-            Console.WriteLine("\n");
-
-            int menyVal = 1;
-            switch (menyVal)
             {
-                case 1:
-                    Console.WriteLine("Lägg till en ny gäst i listan");
-                    break;
+                Console.WriteLine("[1] Lägg till en ny gäst i listan");
+                Console.WriteLine("[2] Visa inlagda gäster");
+                Console.WriteLine("[3] Ta bort gäst från listan");
+                Console.WriteLine("[4] Generera rabattkod");
+                Console.WriteLine("[5] Avsluta programmet");
 
-                case 2:
-                    Console.WriteLine("Visa inlagda gäster");
-                    break;
+                Int32.TryParse(Console.ReadLine(), out int menyVal);
+                switch (menyVal)
+                {
+                    case 1:
+                        NewGuest(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+                        break;
 
-                case 3:
-                    Console.WriteLine("Ta bort gäst från listan");
-                    break;
+                    case 2:
+                        foreach(Guest guest in guestList)
+                        break;
 
-                case 4:
-                    Console.WriteLine("Generera rabattkod");
-                    break;
+                    case 3:
+                        
+                        break;
 
-                case 5:
-                    Console.WriteLine("Avsluta programmet");
-                    isOn = false;
-                    break;
+                    case 4:
+                        
+                        break;
+
+                    case 5:
+                        isOn = false;
+                        break;
+                }
             }
+        }
+        static void NewGuest(string firstName, string lastName, string email)
+        {
+            List<string> guestList = new List<string>();
+            Console.WriteLine("Skriv in gästens förnamn:");
+            firstName = Console.ReadLine();
+            guestList.Add(firstName);
+
+            Console.WriteLine("Skriv in gästens efternamn:");
+            lastName = Console.ReadLine();
+            guestList.Add(lastName);
+
+            Console.WriteLine("Skriv in gästens mail adress:");
+            email = Console.ReadLine();
+            guestList.Add(email);
+
+            Console.WriteLine("Gästen har lagts till i listan!");
+            Console.WriteLine("\n");
+        }
+        
+    }
+
+    class Guest
+    {
+        public string firstName;
+        public string lastName;
+        public string email;
+
+        public Guest(string aFirstName, string aLastName, string aEmail)
+        {
+            firstName = aFirstName;
+            lastName = aLastName;
+            email = aEmail;
         }
     }
 }
