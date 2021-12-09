@@ -23,11 +23,26 @@ namespace Inlamningsuppgift_c_sharp
                 switch (menyVal)
                 {
                     case 1:
-                        NewGuest(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+                        List<string> guestList = new List<string>();
+                        Console.WriteLine("Skriv in gästens förnamn:");
+                        string firstName = Console.ReadLine();
+                        guestList.Add(firstName);
+
+                        Console.WriteLine("Skriv in gästens efternamn:");
+                        string lastName = Console.ReadLine();
+                        guestList.Add(lastName);
+
+                        Console.WriteLine("Skriv in gästens mail adress:");
+                        string email = Console.ReadLine();
+                        guestList.Add(email);
+
+                        Console.WriteLine("Gästen har lagts till i listan!");
+                        Console.WriteLine("\n");
+                        //NewGuest(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
                         break;
 
                     case 2:
-                        foreach(Guest guest in guestList)
+                        guestList.ForEach(p => Console.WriteLine(p));
                         break;
 
                     case 3:
@@ -44,6 +59,7 @@ namespace Inlamningsuppgift_c_sharp
                 }
             }
         }
+
         static void NewGuest(string firstName, string lastName, string email)
         {
             List<string> guestList = new List<string>();
