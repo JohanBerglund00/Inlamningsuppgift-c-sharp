@@ -6,3 +6,11 @@ D:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inla
 D:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.csproj.CoreCompileInputs.cache
 D:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.exe
 D:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.pdb
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.csproj.AssemblyReference.cache
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.csproj.SuggestedBindingRedirects.cache
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.csproj.CoreCompileInputs.cache
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.exe
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\obj\Debug\Inlamningsuppgift-c-sharp.pdb
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\bin\Debug\Inlamningsuppgift-c-sharp.exe.config
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\bin\Debug\Inlamningsuppgift-c-sharp.exe
+C:\EC\C-sharp\Inlamningsuppgift-c-sharp\Inlamningsuppgift-c-sharp\bin\Debug\Inlamningsuppgift-c-sharp.pdb

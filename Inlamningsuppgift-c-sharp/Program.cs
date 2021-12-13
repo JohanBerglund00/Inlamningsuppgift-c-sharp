@@ -10,6 +10,7 @@ namespace Inlamningsuppgift_c_sharp
     {
         static void Main(string[] args)
         {
+            List<Guest> guestList = new List<Guest>();
             bool isOn = true;
             while (isOn == true)
             {
@@ -23,26 +24,29 @@ namespace Inlamningsuppgift_c_sharp
                 switch (menyVal)
                 {
                     case 1:
-                        List<string> guestList = new List<string>();
                         Console.WriteLine("Skriv in gästens förnamn:");
                         string firstName = Console.ReadLine();
-                        guestList.Add(firstName);
 
                         Console.WriteLine("Skriv in gästens efternamn:");
                         string lastName = Console.ReadLine();
-                        guestList.Add(lastName);
 
                         Console.WriteLine("Skriv in gästens mail adress:");
                         string email = Console.ReadLine();
-                        guestList.Add(email);
+
+                        Guest newGuest = new Guest(firstName, lastName, email);
+                        guestList.Add(newGuest);
 
                         Console.WriteLine("Gästen har lagts till i listan!");
                         Console.WriteLine("\n");
-                        //NewGuest(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
                         break;
 
                     case 2:
-                        guestList.ForEach(p => Console.WriteLine(p));
+                        foreach(Guest guest in guestList)
+                        {
+                            Console.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
+                            Console.WriteLine($"Email: {guest.Email}");
+                            Console.WriteLine("\n");
+                        }
                         break;
 
                     case 3:
@@ -50,7 +54,10 @@ namespace Inlamningsuppgift_c_sharp
                         break;
 
                     case 4:
-                        
+                        Random rnd = new Random();
+                        int num = rnd.Next(99999, 1000000);
+                        Console.WriteLine($"Din rabattkod: {num}");
+                        Console.WriteLine("\n");
                         break;
 
                     case 5:
@@ -60,38 +67,51 @@ namespace Inlamningsuppgift_c_sharp
             }
         }
 
-        static void NewGuest(string firstName, string lastName, string email)
+        /*class Guest
         {
-            List<string> guestList = new List<string>();
+            public Guest(string aFirstName, string aLastName, string aEmail)
+            {
+                firstName = aFirstName;
+                lastName = aLastName;
+                email = aEmail;
+            }
+
+            private string firstName;
+            public string FirstName
+            {
+                get { return firstName; }
+            }
+
+            private String lastName;
+            public String LastName
+            {
+                get { return lastName; }
+            }
+
+            private string email;
+            public string Email
+            {
+                get { return email; }
+            }
+        }*/
+
+        /*static void NewGuest(string firstName, string lastName, string email)
+        {
+            List<Guest> guestList = new List<Guest>();
             Console.WriteLine("Skriv in gästens förnamn:");
             firstName = Console.ReadLine();
-            guestList.Add(firstName);
 
             Console.WriteLine("Skriv in gästens efternamn:");
             lastName = Console.ReadLine();
-            guestList.Add(lastName);
 
             Console.WriteLine("Skriv in gästens mail adress:");
             email = Console.ReadLine();
-            guestList.Add(email);
 
             Console.WriteLine("Gästen har lagts till i listan!");
             Console.WriteLine("\n");
-        }
+            Guest newGuest = new Guest(firstName, lastName, email);
+            guestList.Add(newGuest);
+        }*/
         
-    }
-
-    class Guest
-    {
-        public string firstName;
-        public string lastName;
-        public string email;
-
-        public Guest(string aFirstName, string aLastName, string aEmail)
-        {
-            firstName = aFirstName;
-            lastName = aLastName;
-            email = aEmail;
-        }
     }
 }
