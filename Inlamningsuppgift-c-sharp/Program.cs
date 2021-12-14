@@ -10,8 +10,8 @@ namespace Inlamningsuppgift_c_sharp
     {
         static void Main(string[] args)
         {
-            List<Guest> guestList = new List<Guest>();
             bool isOn = true;
+            List<Guest> guestList = new List<Guest>();
             while (isOn == true)
             {
                 Console.WriteLine("[1] Lägg till en ny gäst i listan");
@@ -24,13 +24,13 @@ namespace Inlamningsuppgift_c_sharp
                 switch (menyVal)
                 {
                     case 1:
-                        Console.WriteLine("Skriv in gästens förnamn:");
+                        Console.WriteLine("Skriv in förnamn:");
                         string firstName = Console.ReadLine();
 
-                        Console.WriteLine("Skriv in gästens efternamn:");
+                        Console.WriteLine("Skriv in efternamn:");
                         string lastName = Console.ReadLine();
 
-                        Console.WriteLine("Skriv in gästens mail adress:");
+                        Console.WriteLine("Skriv in email adress:");
                         string email = Console.ReadLine();
 
                         Guest newGuest = new Guest(firstName, lastName, email);
@@ -50,13 +50,13 @@ namespace Inlamningsuppgift_c_sharp
                         break;
 
                     case 3:
-                        
+                        guestList.Remove(newGuest);
                         break;
 
                     case 4:
                         Random rnd = new Random();
-                        int num = rnd.Next(99999, 1000000);
-                        Console.WriteLine($"Din rabattkod: {num}");
+                        int rabattkod = rnd.Next(99999, 1000000);
+                        Console.WriteLine($"Din rabattkod: {rabattkod}");
                         Console.WriteLine("\n");
                         break;
 
