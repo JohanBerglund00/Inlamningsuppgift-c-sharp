@@ -21,8 +21,8 @@ namespace Inlamningsuppgift_c_sharp
             get { return firstName; }
         }
 
-        private String lastName;
-        public String LastName
+        private string lastName;
+        public string LastName
         {
             get { return lastName; }
         }

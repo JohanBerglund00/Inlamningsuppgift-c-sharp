@@ -35,6 +35,7 @@ namespace Inlamningsuppgift_c_sharp
 
                         Guest newGuest = new Guest(firstName, lastName, email);
                         guestList.Add(newGuest);
+                        Console.WriteLine($"Gästens ID-nummer: {guestList.IndexOf(newGuest)}");
 
                         Console.WriteLine("Gästen har lagts till i listan!");
                         Console.WriteLine("\n");
@@ -43,14 +44,19 @@ namespace Inlamningsuppgift_c_sharp
                     case 2:
                         foreach(Guest guest in guestList)
                         {
+                            int idNumber = 0;
                             Console.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
                             Console.WriteLine($"Email: {guest.Email}");
+                            Console.WriteLine(idNumber+1);
                             Console.WriteLine("\n");
+                            
                         }
                         break;
 
                     case 3:
-                        guestList.Remove(newGuest);
+                        Console.WriteLine("Skriv in gästens ID-nummer för att avboka:");
+                        Int32.TryParse(Console.ReadLine(), out int guestIndex);
+                        guestList.RemoveAt(guestIndex);
                         break;
 
                     case 4:
@@ -66,52 +72,5 @@ namespace Inlamningsuppgift_c_sharp
                 }
             }
         }
-
-        /*class Guest
-        {
-            public Guest(string aFirstName, string aLastName, string aEmail)
-            {
-                firstName = aFirstName;
-                lastName = aLastName;
-                email = aEmail;
-            }
-
-            private string firstName;
-            public string FirstName
-            {
-                get { return firstName; }
-            }
-
-            private String lastName;
-            public String LastName
-            {
-                get { return lastName; }
-            }
-
-            private string email;
-            public string Email
-            {
-                get { return email; }
-            }
-        }*/
-
-        /*static void NewGuest(string firstName, string lastName, string email)
-        {
-            List<Guest> guestList = new List<Guest>();
-            Console.WriteLine("Skriv in gästens förnamn:");
-            firstName = Console.ReadLine();
-
-            Console.WriteLine("Skriv in gästens efternamn:");
-            lastName = Console.ReadLine();
-
-            Console.WriteLine("Skriv in gästens mail adress:");
-            email = Console.ReadLine();
-
-            Console.WriteLine("Gästen har lagts till i listan!");
-            Console.WriteLine("\n");
-            Guest newGuest = new Guest(firstName, lastName, email);
-            guestList.Add(newGuest);
-        }*/
-        
     }
 }
