@@ -44,10 +44,9 @@ namespace Inlamningsuppgift_c_sharp
                     case 2:
                         foreach(Guest guest in guestList)
                         {
-                            int idNumber = 0;
                             Console.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
                             Console.WriteLine($"Email: {guest.Email}");
-                            Console.WriteLine(idNumber+1);
+                            Console.WriteLine(guestList.FindIndex);
                             Console.WriteLine("\n");
                             
                         }
