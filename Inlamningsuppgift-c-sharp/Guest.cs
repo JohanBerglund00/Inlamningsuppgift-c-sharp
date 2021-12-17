@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Inlamningsuppgift_c_sharp
 {
     class Guest
@@ -13,6 +14,8 @@ namespace Inlamningsuppgift_c_sharp
             firstName = aFirstName;
             lastName = aLastName;
             email = aEmail;
+            Random rnd = new Random();
+            this.rabattkod = rnd.Next(99999, 1000000);
         }
 
         private string firstName;
@@ -31,6 +34,12 @@ namespace Inlamningsuppgift_c_sharp
         public string Email
         {
             get { return email; }
+        }
+
+        private int rabattkod;
+        public int Rabattkod
+        {
+            get { return rabattkod; }
         }
     }
 }

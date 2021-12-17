@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Inlamningsuppgift_c_sharp
 {
@@ -17,7 +18,7 @@ namespace Inlamningsuppgift_c_sharp
                 Console.WriteLine("[1] Lägg till en ny gäst i listan");
                 Console.WriteLine("[2] Visa inlagda gäster");
                 Console.WriteLine("[3] Ta bort gäst från listan");
-                Console.WriteLine("[4] Generera rabattkod");
+                Console.WriteLine("[4] Spara deltagarlista");
                 Console.WriteLine("[5] Avsluta programmet");
 
                 Int32.TryParse(Console.ReadLine(), out int menyVal);
@@ -46,7 +47,7 @@ namespace Inlamningsuppgift_c_sharp
                         {
                             Console.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
                             Console.WriteLine($"Email: {guest.Email}");
-                            Console.WriteLine(guestList.FindIndex);
+                            Console.WriteLine($"ID-nummer: {guestList.IndexOf(guest)}");
                             Console.WriteLine("\n");
                             
                         }
@@ -59,11 +60,27 @@ namespace Inlamningsuppgift_c_sharp
                         break;
 
                     case 4:
-                        Random rnd = new Random();
-                        int rabattkod = rnd.Next(99999, 1000000);
-                        Console.WriteLine($"Din rabattkod: {rabattkod}");
-                        Console.WriteLine("\n");
+                        string path = $@"{AppContext.BaseDirectory}MyTest.txt";
+
+                            if (File.Exists(path))
+                        {
+                            File.Delete(path);
+                        }
+                            
+                            
+                                using (StreamWriter sw = File.CreateText(path))
+                                {
+                                foreach (Guest guest in guestList)
+                                {
+                                    sw.WriteLine($"{guestList.IndexOf(guest)} {guest.FirstName} {guest.LastName} {guest.Email}");
+                                }
+                                }
+                            
                         break;
+                        
+
+                        
+                        
 
                     case 5:
                         isOn = false;
