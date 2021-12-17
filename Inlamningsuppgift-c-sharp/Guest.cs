@@ -11,26 +11,29 @@ namespace Inlamningsuppgift_c_sharp
     {
         public Guest(string aFirstName, string aLastName, string aEmail)
         {
-            firstName = aFirstName;
-            lastName = aLastName;
-            email = aEmail;
+            if(aFirstName != String.Empty)
+                firstName = aFirstName;
+            if (aLastName != String.Empty)
+                lastName = aLastName;
+            if (aEmail != String.Empty)
+                email = aEmail;
             Random rnd = new Random();
             this.rabattkod = rnd.Next(99999, 1000000);
         }
 
-        private string firstName;
+        private string firstName= "ej angivet";
         public string FirstName
         {
             get { return firstName; }
         }
 
-        private string lastName;
+        private string lastName = "ej angivet";
         public string LastName
         {
             get { return lastName; }
         }
 
-        private string email;
+        private string email = "ej angivet";
         public string Email
         {
             get { return email; }

@@ -37,6 +37,7 @@ namespace Inlamningsuppgift_c_sharp
                         Guest newGuest = new Guest(firstName, lastName, email);
                         guestList.Add(newGuest);
                         Console.WriteLine($"Gästens ID-nummer: {guestList.IndexOf(newGuest)}");
+                        Console.WriteLine($"Gästens rabattkod: {newGuest.Rabattkod}");
 
                         Console.WriteLine("Gästen har lagts till i listan!");
                         Console.WriteLine("\n");
@@ -48,26 +49,39 @@ namespace Inlamningsuppgift_c_sharp
                             Console.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
                             Console.WriteLine($"Email: {guest.Email}");
                             Console.WriteLine($"ID-nummer: {guestList.IndexOf(guest)}");
+                            Console.WriteLine($"Rabattkod: {guest.Rabattkod}");
                             Console.WriteLine("\n");
-                            
                         }
                         break;
 
                     case 3:
                         Console.WriteLine("Skriv in gästens ID-nummer för att avboka:");
                         Int32.TryParse(Console.ReadLine(), out int guestIndex);
-                        guestList.RemoveAt(guestIndex);
+                        if(guestList.Count > guestIndex)
+                        {
+                            guestList.RemoveAt(guestIndex);
+                            Console.WriteLine("Gästen har avbokats!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Gästen fanns inte i listan");
+                        }
                         break;
 
                     case 4:
-                        string path = $@"{AppContext.BaseDirectory}MyTest.txt";
-
-                            if (File.Exists(path))
+                      
+                        Console.WriteLine("Ange sökväg och filnamn:");
+                        string path = Console.ReadLine();
+                        if (path == String.Empty)
                         {
+                            path = $@"{AppContext.BaseDirectory}MyTest.txt";
+                        }
+
+                        if (File.Exists(path))
+                        {
+                            
                             File.Delete(path);
                         }
-                            
-                            
                                 using (StreamWriter sw = File.CreateText(path))
                                 {
                                 foreach (Guest guest in guestList)
@@ -75,13 +89,8 @@ namespace Inlamningsuppgift_c_sharp
                                     sw.WriteLine($"{guestList.IndexOf(guest)} {guest.FirstName} {guest.LastName} {guest.Email}");
                                 }
                                 }
-                            
                         break;
                         
-
-                        
-                        
-
                     case 5:
                         isOn = false;
                         break;
