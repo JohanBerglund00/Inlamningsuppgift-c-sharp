@@ -71,7 +71,7 @@ namespace Inlamningsuppgift_c_sharp
                     case 4:
                       
                         Console.WriteLine("Ange sökväg och filnamn:");
-                        string path = Console.ReadLine();
+                        string path = Console.ReadLine(); // Användaren skriver in filnamn och sökväg där filen ska sparas.
                         if (path == String.Empty)
                         {
                             path = $@"{AppContext.BaseDirectory}MyTest.txt";
@@ -79,15 +79,16 @@ namespace Inlamningsuppgift_c_sharp
 
                         if (File.Exists(path))
                         {
-                            
                             File.Delete(path);
                         }
                                 using (StreamWriter sw = File.CreateText(path))
                                 {
-                                foreach (Guest guest in guestList)
-                                {
-                                    sw.WriteLine($"{guestList.IndexOf(guest)} {guest.FirstName} {guest.LastName} {guest.Email}");
-                                }
+                                    foreach (Guest guest in guestList)
+                                    {
+                                        sw.WriteLine($"ID-nummer: {guestList.IndexOf(guest)}");
+                                        sw.WriteLine($"Namn: {guest.FirstName} {guest.LastName}");
+                                        sw.WriteLine($"E-mail: {guest.Email}");
+                                    }
                                 }
                         break;
                         

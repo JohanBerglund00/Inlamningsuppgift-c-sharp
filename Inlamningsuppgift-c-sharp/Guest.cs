@@ -21,19 +21,19 @@ namespace Inlamningsuppgift_c_sharp
             this.rabattkod = rnd.Next(99999, 1000000);
         }
 
-        private string firstName= "ej angivet";
+        private string firstName= "Ej angivet";
         public string FirstName
         {
             get { return firstName; }
         }
 
-        private string lastName = "ej angivet";
+        private string lastName = "Ej angivet";
         public string LastName
         {
             get { return lastName; }
         }
 
-        private string email = "ej angivet";
+        private string email = "Ej angivet";
         public string Email
         {
             get { return email; }
